@@ -1,0 +1,255 @@
+<html lang="en"><head><style type="text/css" id="dcoder_stylesheet">body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+/* Header dan Navigasi */
+header {
+    background-color: #ff5722;
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: #ff5722;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+nav button:hover {
+    color: #e64a19;
+}
+
+.container {
+    padding: 20px;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.hero {
+    background: url('path/to/hero-image.jpg') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.product-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Gaya untuk Rekomendasi */
+.mood-selection {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.mood-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px
+</style></head><body>!DOCTYPE html&gt;
+
+
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Aroma Diffuser Store</title> 
+    <link rel="stylesheet" href="styles.css">
+
+
+    <header> 
+        <img src="path/to/logo.jpg" alt="Logo Aroma Diffuser" class="logo"> 
+        <h1>Aroma Diffuser Store</h1> 
+    </header> 
+    <!-- Navigasi --> 
+    <nav> 
+        <button onclick="showSection('home')">Home</button> 
+        <button onclick="showSection('category')">Kategori</button> 
+        <button onclick="showSection('promo')">Promo</button> 
+        <button onclick="showSection('recommendation')">Rekomendasi</button> 
+        <button onclick="showSection('contact')">Kontak</button> 
+    </nav> 
+    <!-- Halaman Konten --> 
+    <div id="home" class="container"> 
+        <div class="hero">
+            <h1>Selamat Datang di Aroma Diffuser Store</h1>
+        </div>
+        <h2>Apa Itu Aroma Diffuser?</h2>
+        <p>Aroma diffuser adalah alat yang menyebarkan aroma dari minyak esensial ke udara, menciptakan suasana yang nyaman dan menenangkan. Dengan berbagai pilihan aroma, Anda dapat memilih sesuai dengan suasana hati dan kebutuhan Anda.</p>
+    </div> 
+    <div id="category" class="container" style="display:none;"> 
+        <h2>Kategori Produk</h2> 
+        <div class="product-list"> 
+            <div class="product-item"> 
+                <img src="path/to/lavender.jpg" alt="Lavender Diffuser"> 
+                <h3>Lavender Diffuser</h3> 
+                <p>Menenangkan dan menyegarkan suasana.</p> 
+                <p><strong>Harga: Rp 150.000</strong></p> 
+            </div> 
+            <div class="product-item"> 
+                <img src="path/to/peppermint.jpg" alt="Peppermint Diffuser"> 
+                <h3>Peppermint Diffuser</h3> 
+                <p>Memberikan energi dan kesegaran.</p> 
+                <p><strong>Harga: Rp 175.000</strong></p> 
+            </div> 
+            <div class="product-item"> 
+                <img src="path/to/rosemary.jpg" alt="Rosemary Diffuser"> 
+                <h3>Rosemary Diffuser</h3> 
+                <p>Membantu fokus dan konsentrasi.</p> 
+                <p><strong>Harga: Rp 160.000</strong></p> 
+            </div> 
+            <div class="product-item"> 
+                <img src="path/to/chamomile.jpg" alt="Chamomile Diffuser"> 
+                <h3>Chamomile Diffuser</h3> 
+                <p>Mengurangi stres dan rileksasi.</p> 
+                <p><strong>Harga: Rp 140.000</strong></p> 
+            </div> 
+        </div> 
+    </div> 
+    <div id="promo" class="container" style="display:none;"> 
+        <h2>Promo Terbaru</h2> 
+        <p>Dapatkan diskon hingga 20% untuk semua produk aroma diffuser bulan ini!</p> 
+        <p>Gunakan kode promo <strong>AROMA20</strong> saat checkout.</p> 
+    </div> 
+    <div id="recommendation" class="container" style="display:none;"> 
+        <h2>Pilih Suasana Hati Anda</h2> 
+        <div class="mood-selection"> 
+            <div class="mood-item" onclick="getRecommendation('relax')">
+                Relaksasi
+            </div> 
+            <div class="mood-item" onclick="getRecommendation('energetic')">
+                Energi
+            </div> 
+            <div class="mood-item" onclick="getRecommendation('focus')">
+                Fokus
+            </div> 
+            <div class="mood-item" onclick="getRecommendation('stressRelief')">
+                Mengurangi Stres
+            </div> 
+        </div> 
+        <div id="recommendationResult" style="display:none; margin-top:20px;"> 
+            <h3>Rekomendasi Aroma Anda</h3> 
+            <p id="recommendationText"></p> 
+            <button class="button" onclick="resetRecommendation()">Kembali</button> 
+        </div> 
+    </div> 
+    <div id="contact" class="container" style="display:none;"> 
+        <h2>Kontak Kami</h2> 
+        <p>Email: <a href="mailto:support@aromadiffuser.com">support@aromadiffuser.com</a></p> 
+        <p>Telepon: <a href="tel:+621234567890">+62 123 4567 890</a></p> 
+        <p>Alamat: Jalan Sejahtera No. 10, Jakarta</p> 
+        <p><strong>Jam Operasional:</strong> Senin - Jumat, 08:00 - 17:00 WIB</p> 
+        <div class="faq-section">
+            <h3>FAQ</h3>
+            <div class="faq-item">
+                <p class="faq-question">Apa itu aroma diffuser?</p>
+                <p>Aroma diffuser adalah alat yang membantu menyebarkan minyak esensial ke udara untuk menciptakan suasana yang nyaman.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Apa manfaat menggunakan aroma diffuser?</p>
+                <p>Aroma diffuser dapat membantu mengurangi stres, meningkatkan konsentrasi, dan menciptakan atmosfer yang lebih menyenangkan di rumah.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Berapa lama minyak esensial bertahan dalam diffuser?</p>
+                <p>Durasi bertahannya minyak esensial tergantung pada jenis dan kualitas minyak, serta pengaturan diffuser yang digunakan.</p>
+            </div>
+        </div>
+    </div> 
+    <footer> 
+        <p>Website ini dikembangkan oleh tim beranggotakan 5 pengembang untuk pengalaman berbelanja yang terbaik.</p> 
+    </footer> 
+    <script src="scripts.js"></script>
+
+<script type="text/javascript" id="dcoder_script">function showSection(sectionId) {
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('category').style.display = 'none';
+    document.getElementById('promo').style.display = 'none';
+    document.getElementById('recommendation').style.display = 'none';
+    document.getElementById('contact').style.display = 'none';
+
+    document.getElementById(sectionId).style.display = 'block';
+}
+
+function getRecommendation(mood) {
+    let recommendation = '';
+
+    switch (mood) {
+        case 'relax':
+            recommendation = 'Aroma yang cocok untuk Anda adalah Lavender.';
+            break;
+        case 'energetic':
+            recommendation = 'Aroma yang cocok untuk Anda adalah Peppermint.';
+            break;
+        case 'focus':
+            recommendation = 'Aroma yang cocok untuk Anda adalah Rosemary.';
+            break;
+        case 'stressRelief':
+            recommendation = 'Aroma yang cocok untuk Anda adalah Chamomile.';
+            break;
+        default:
+            recommendation = 'Silakan pilih suasana hati Anda!';
+            break;
+    }
+
+    document.getElementById('recommendationText').innerText = recommendation;
+    document.getElementById('recommendationResult').style.display = 'block';
+}
+
+function resetRecommendation() {
+    document.getElementById('recommendationResult').style.display = 'none';
+}
+</script></body></html>
